@@ -1,0 +1,342 @@
+# Introduction
+
+   GeoJSON is a format for encoding data about geographic features using
+   JavaScript Object Notation (JSON) [RFC7159].  The format is concerned
+   with features in the broadest sense; any thing with qualities that
+   are bounded in geographical space may be a feature whether it is
+   a physical structure or not.  The concepts in GeoJSON are not new;
+   they are derived from pre-existing open geographic information system
+   standards (for COM, SQL, and XML) and have been streamlined to better
+   suit web application development using JSON.
+
+   GeoJSON comprises the seven concrete geometry types defined in the
+   OpenGIS Simple Features Implementation Specification for SQL [SFSQL]:
+   0-dimensional Point and MultiPoint; 1-dimensional curve LineString
+   and MultiLineString; 2-dimensional surface Polygon and MultiPolygon;
+   and the heterogeneous GeometryCollection.  GeoJSON representations of
+   instances of these geometry types are analogous to the well-known
+   binary (WKB) and text (WKT) representations described in that same
+   specification.
+
+   GeoJSON also comprises the types Feature and FeatureCollection.
+   Feature objects in GeoJSON contain a geometry object with one of the
+   above geometry types and additional properties. A FeatureCollection
+   object contains an array of feature objects.  This structure is
+   analogous to that of the Web Feature Service (WFS) response to
+   GetFeatures requests specified in [WFSv1] or to a KML Folder of
+   Placemarks [KMLv2.2].  Some implementations of the WFS specification
+   also provide GeoJSON formatted responses to GetFeature requests, but
+   there is no particular service model or feature type ontology implied
+   in the GeoJSON format specification.
+
+   Since its initial publication in 2008 [GJ2008], the GeoJSON
+   format specification has steadily grown in popularity.  It is widely
+   used in JavaScript web mapping libraries, JSON-based document
+   databases, and web APIs.
+
+## Requirements Language
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in 
+   [RFC2119].
+
+## Conventions Used in This Document
+
+The ordering of the members of any JSON object defined in this document
+MUST be considered irrelevant, as specified by [RFC7159].
+
+Some examples use the combination of a JavaScript single line comment
+(//) followed by an ellipsis (...) as placeholder notation for content
+deemed irrelevant by the authors. These placeholders must of course be
+deleted or otherwise replaced, before attempting to validate the
+corresponding JSON code example.
+
+Whitespace is used in the examples inside this document to help
+illustrate the data structures, but is not required. Unquoted whitespace
+is not significant in JSON.
+
+## Specification of GeoJSON
+
+This document updates the original GeoJSON format specification
+[GJ2008].
+
+## Definitions
+
+* JavaScript Object Notation (JSON), and the terms object, name, value,
+  array, number, true, false, and null are to be interpreted as defined
+  in [RFC7159].
+
+* Inside this document the term "geometry type" refers to the seven
+  case-sensitive strings: "Point", "MultiPoint", "LineString",
+  "MultiLineString", "Polygon", "MultiPolygon", and
+  "GeometryCollection".
+
+* As another shorthand notation, the term "GeoJSON types" refers to the
+  nine case-sensitive strings "Feature", "FeatureCollection" and the
+  geometry types listed above.
+
+## Example
+
+A GeoJSON feature collection:
+
+    {
+        "type": "FeatureCollection",
+        "features": [{
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.0, 0.5]
+            },
+            "properties": {
+                "prop0": "value0"
+            }
+        }, {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [102.0, 0.0],
+                    [103.0, 1.0],
+                    [104.0, 0.0],
+                    [105.0, 1.0]
+                ]
+            },
+            "properties": {
+                "prop0": "value0",
+                "prop1": 0.0
+            }
+        }, {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [100.0, 0.0],
+                        [101.0, 0.0],
+                        [101.0, 1.0],
+                        [100.0, 1.0],
+                        [100.0, 0.0]
+                    ]
+                ]
+            },
+            "properties": {
+                "prop0": "value0",
+                "prop1": {
+                    "this": "that"
+                }
+            }
+        }]
+    }
+
+# GeoJSON Object
+
+GeoJSON always consists of a single object. This object (referred to as
+the GeoJSON object below) represents a geometry, feature, or collection
+of features.
+
+* The GeoJSON object MUST have a member with the name "type". The value
+  of the member MUST be one of the GeoJSON types.
+
+* The GeoJSON object MAY have any number of other members.
+
+* A GeoJSON object MAY have a "bbox" member, the value of which MUST be
+  a bounding box array (see 4. Bounding Boxes).
+
+## Geometry Object
+
+A geometry object is a GeoJSON object where the "type" value is one of
+the geometry types. A GeoJSON geometry object of any type other than
+"GeometryCollection" MUST have a member with the name "coordinates". The
+value of the coordinates member is always an array. The structure of the
+elements in this array is determined by the type of geometry. GeoJSON
+processors MAY interpret geometry objects with empty coordinates arrays
+as null objects.
+
+### Position
+
+A position is the fundamental geometry construct. The "coordinates"
+member of a geometry object is composed of either:
+
+* one position (in the case of a Point geometry),
+
+* an array of positions (LineString or MultiPoint geometries),
+
+* an array of arrays of positions (Polygons, MultiLineStrings),
+
+* or a multidimensional array of positions (MultiPolygon).
+
+A position is represented by an array of numbers. There MUST be two or
+more elements. The first two elements will be longitude and latitude, 
+or easting and northing, precisely in that order and using decimal numbers.
+Altitude or elevation MAY be included as an optional third element.
+
+Additional position elements MAY be included but MUST follow the three
+specified above and MAY be ignored by software. Interpretation and
+meaning of additional elements is beyond the scope of this
+specification.
+
+Examples of positions and geometries are provided in "Appendix A.
+Geometry Examples".
+
+### Point
+
+For type "Point", the "coordinates" member MUST be a single position.
+
+### MultiPoint
+
+For type "MultiPoint", the "coordinates" member MUST be an array of
+positions.
+
+### LineString
+
+For type "LineString", the "coordinates" member MUST be an array of two
+or more positions.
+
+### MultiLineString
+
+For type "MultiLineString", the "coordinates" member MUST be an array of
+LineString coordinate arrays.
+
+### Polygon
+
+To specify a constraint specific to polygons, it is useful to introduce
+the concept of a linear ring:
+
+* A linear ring is a closed LineString with 4 or more positions.
+
+* The first and last positions are equivalent (they represent
+  equivalent points).
+
+* A linear ring is the boundary of a surface or the boundary of a hole in
+  a surface.
+  
+* A linear ring SHOULD follow right-hand rule with respect to the area
+  it bounds (ie. exterior rings are counter-clockwise, holes are 
+  clockwise)
+
+Though a linear ring is not explicitly represented as a GeoJSON geometry
+type, it leads to a canonical formulation of the Polygon geometry type
+definition as follows:
+
+* For type "Polygon", the "coordinates" member MUST be an array of
+  linear ring coordinate arrays.
+
+* For Polygons with more than one of these rings, the first MUST be the
+  exterior ring and any others MUST be interior rings. The exterior ring
+  bounds the surface and the interiors rings (if present) bound holes
+  within the surface.
+
+### MultiPolygon
+
+For type "MultiPolygon", the "coordinates" member MUST be an array of
+Polygon coordinate arrays.
+
+### Geometry Collection
+
+A GeoJSON object with type "GeometryCollection" is a geometry object
+which represents a collection of geometry objects. A geometry collection
+MUST have a member with the name "geometries".  The value corresponding
+to "geometries" is an array. Each element in this array is a GeoJSON
+geometry object.
+
+## Feature Object
+
+A GeoJSON object with the type "Feature" is a feature object.
+
+* A feature object MUST have a member with the name "geometry". The
+  value of the geometry member SHALL be either a geometry object as
+  defined above or, in the the case that the feature is unlocated,
+  a JSON null value. 
+
+* A feature object MUST have a member with the name "properties". The
+  value of the properties member is an object (any JSON object or a
+  JSON null value).
+
+* If a feature has a commonly used identifier, that identifier SHOULD be
+  included as a member of the feature object with the name "id" and the
+  value of this member is either a JSON string or number.
+
+## Feature Collection Object
+
+A GeoJSON object with the type "FeatureCollection" is a feature
+collection object. An object of type "FeatureCollection" MUST have
+a member with the name "features". The value corresponding to "features"
+is an array. Each element in the array is a feature object as defined
+above.
+
+# Coordinate Reference System
+
+The default reference system for all GeoJSON coordinates SHALL be
+a geographic coordinate reference system, using the [WGS84] datum, and
+with longitude and latitude units of decimal degrees. This coordinate
+reference system is equivalent to the OGC's
+"http://www.opengis.net/def/crs/OGC/1.3/CRS84" [OGCURL]. An OPTIONAL
+third position element SHALL be the height in meters above the WGS 84
+reference ellipsoid. For widest interoperability, GeoJSON data SHOULD
+use this default coordinate reference system.
+
+Other coordinate reference systems, including ones described by CRS
+objects of the kind defined in [GJ2008] are NOT RECOMMENDED. GeoJSON
+processing software SHALL NOT be expected to have access to coordinate
+reference systems databases.  Applications requiring CRS other than the
+default MUST assume all responsibility for reference system and
+coordinate accuracy. Furthermore, GeoJSON coordinates MUST NOT under any
+circumstances use latitude, longitude order. See Section 6,
+Interoperability Considerations, for guidance in processing GeoJSON
+documents that do contain such a CRS object.
+
+# Bounding Box
+
+A GeoJSON object MAY have a member named "bbox" to include information
+on the coordinate range for its geometries, features, or feature
+collections. The value of the bbox member MUST be an array of length
+2*n where n is the number of dimensions represented in the contained
+geometries, with for all axes of the most south-westerly point followed by 
+all axes of the more north-easterly point. The axes order of a bbox 
+follows the axes order of geometries.
+
+Example of a bbox member on a feature:
+
+    {
+        "type": "Feature",
+        "bbox": [-180.0, -90.0, 180.0, 90.0],
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [-180.0, 10.0],
+                    [20.0, 90.0],
+                    [180.0, -5.0],
+                    [-30.0, -90.0]
+                ]
+            ]
+        }
+        //...
+    }
+
+Example of a bbox member on a feature collection:
+
+    {
+        "type": "FeatureCollection",
+        "bbox": [100.0, 0.0, 105.0, 1.0],
+        "features": [
+        //...
+        ]
+    }
+
+Example of a bbox for line crossing the date-line:
+
+    {
+        "type": "Feature",
+        "bbox": [170, 10, -170, 11],
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-170, 10],
+                [170, 11]
+            ]
+        }
+        //...
+    }
+
