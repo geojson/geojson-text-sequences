@@ -74,25 +74,3 @@ into a document of 3 separate incrementally parseable JSON texts, each containin
 ^^{ "type": "Feature", "geometry": {"type": "LineString", "coordinates": [[102.0, 0.0], [103.0, 1.0], [104.0, 0.0], [105.0, 1.0]]}, "properties": {"prop0": "value0", "prop1": 0.0}}
 ^^{ "type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[100.0, 0.0], [101.0, 0.0], [101.0, 1.0], [100.0, 1.0], [100.0, 0.0]]]}, "properties": {"prop0": "value0", "prop1": {"this": "that"}}}
 ```
-
-## Generating Docs
-
-### Dependencies
-
- * [`xml2rfc`](https://pypi.python.org/pypi/xml2rfc/), a Python module
- * [`pandoc2rfc`](https://raw.github.com/miekg/pandoc2rfc/master/pandoc2rfc)
- * pandoc
-
-### Transform Markdown to XML etc.
-
-Inside the working copy of the repo perform (current practice):
-
-```bash
-bash ./build
-```
-
-which does the following:
-
-```bash
-bash pandoc2rfc -R -t template.xml -x transform.xsl back.mkd middle.mkd && mv draft.txt draft-unpaginated.txt && for i in H N T X; do bash pandoc2rfc -$i -t template.xml -x transform.xsl back.mkd middle.mkd; done
-```
