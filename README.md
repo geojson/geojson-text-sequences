@@ -67,7 +67,7 @@ In a nutshell, GeoJSON Feature Sequences proposes to "explode" the following Geo
      }
 ```
 
-into a document of 3 separate incrementally parseable JSON texts, each containing a GeoJSON Feature, delimited by the ASCII RS `0x1e` (represented by `^^` below).
+into a document of 3 separate incrementally parseable JSON texts, each containing a GeoJSON Feature, delimited by the ASCII character RS `0x1e` (represented by `^^` below).
 
 ```json
 ^^{ "type": "Feature", "geometry": {"type": "Point", "coordinates": [102.0, 0.5]}, "properties": {"prop0": "value0"} }
