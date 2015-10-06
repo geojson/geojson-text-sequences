@@ -19,7 +19,7 @@ to use.
 
 GeoJSON has exactly this problem with sequences of features, amplified by the large arrays of coordinates of each feature.
 
-JSON Text Sequences proposes a standard for dealing with this problem.
+JSON Text Sequences provides a standard for dealing with this problem.
 
 > This document describes the concept and format of "JSON text
 sequences", which are specifically not JSON texts themselves but are
