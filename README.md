@@ -2,6 +2,8 @@
 
 A proposed standard for incrementally parseable GeoJSON data
 
+[![Circle CI](https://circleci.com/gh/geojson/geojson-feature-sequences.svg?style=svg)](https://circleci.com/gh/geojson/geojson-feature-sequences)
+
 Large JSON files pose a problem that is well explained in the motivation for the [JSON Text Sequences RFC 7464](https://tools.ietf.org/html/rfc7464).
 
 > The JavaScript Object Notation (JSON) [RFC7159] is a very handy
