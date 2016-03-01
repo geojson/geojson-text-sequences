@@ -8,8 +8,8 @@ Large JSON files pose a problem that is well explained in the motivation for the
 
 > The JavaScript Object Notation (JSON) [RFC7159] is a very handy
 serialization format.  However, when serializing a large sequence of
-values as an array, or a possibly indeterminate-length or never-
-ending sequence of values, JSON becomes difficult to work with.
+values as an array, or a possibly indeterminate-length or
+never-ending sequence of values, JSON becomes difficult to work with.
 >
 > Consider a sequence of one million values, each possibly 1 kilobyte
 when encoded -- roughly one gigabyte.  It is often desirable to
@@ -29,7 +29,7 @@ composed of (possible) JSON texts.  JSON text sequences can be parsed
 (and produced) incrementally without having to have a streaming
 parser (nor streaming encoder).
 
-GeoJSON Feature Sequences are a straight forward adaptation of JSON Text Sequences. A GeoJSON Feature Sequence is a document containing, instead of a single GeoJSON Feature Collection, multiple GeoJSON Feature texts that can be parsed and produced incrementally.
+GeoJSON Feature Sequences are a straightforward adaptation of JSON Text Sequences. A GeoJSON Feature Sequence is a document containing, instead of a single GeoJSON Feature Collection, multiple GeoJSON Feature texts that can be parsed and produced incrementally.
 
 In a nutshell, GeoJSON Feature Sequences proposes to "explode" the following GeoJSON Feature Collection
 
@@ -76,3 +76,5 @@ into a document of 3 separate incrementally parseable JSON texts, each containin
 ^^{ "type": "Feature", "geometry": {"type": "LineString", "coordinates": [[102.0, 0.0], [103.0, 1.0], [104.0, 0.0], [105.0, 1.0]]}, "properties": {"prop0": "value0", "prop1": 0.0}}
 ^^{ "type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[100.0, 0.0], [101.0, 0.0], [101.0, 1.0], [100.0, 1.0], [100.0, 0.0]]]}, "properties": {"prop0": "value0", "prop1": {"this": "that"}}}
 ```
+
+Please note that this last representation is not GeoJSON anymore, because it uses more than one GeoJSON object. It is a "GeoJSON Feature Sequence", which has to be parsed accoring to the rules for JSON Text Sequences, and then can be interpreted as a sequence of individual GeoJSON feature objects.
