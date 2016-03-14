@@ -38,10 +38,9 @@ following GeoJSON Feature Collection,
              "prop0": "value0",
              "prop1": {"this": "that"}}}]}
 
-into a document containing 4 separate JSON texts delimited by the ASCII
+into a document containing 3 separate JSON texts delimited by the ASCII
 character RS "0x1e" (represented by "RS" below).
 
-    RS{ "bbox": [100.0, 0.0, 105.0, 1.0]}
     RS{ "type": "Feature", "geometry": {"type": "Point",
     "coordinates": [102.0, 0.5]}, "properties": {"prop0": "value0"}}
     RS{ "type": "Feature", "geometry": {"type": "LineString",
@@ -51,9 +50,6 @@ character RS "0x1e" (represented by "RS" below).
     "coordinates": [[[100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
     [100.0, 1.0], [100.0, 0.0]]]}, "properties":
     {"prop0": "value0", "prop1": {"this": "that"}}}
-
-The first text contains metadata about the sequence and the following
-texts each contain a GeoJSON Feature.
 
 ## Requirements Language
 
