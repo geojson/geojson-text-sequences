@@ -1,19 +1,19 @@
 # Introduction
 
 Large JSON files pose a problem that is well explained in the motivation
-for JSON Text Sequences [RFC7464]. GeoJSON has exactly this problem
-with sequences of features, amplified by the large arrays of coordinates
-of each feature. GeoJSON Feature Sequences provides a standard for
-dealing with this problem. GeoJSON Feature Sequences are a straight
-forward adaptation of JSON Text Sequences. A GeoJSON Feature Sequence is
-a document containing, instead of a single GeoJSON Feature Collection,
-multiple GeoJSON Feature texts that can be parsed and produced
-incrementally.
+for JSON Text Sequences [RFC7464]. GeoJSON [GeoJSON] has exactly this
+problem with sequences of features, amplified by the large arrays of
+coordinates of each feature.
+
+This document describes a solution to this problem based on JSON Text
+Sequences. A GeoJSON Text Sequence is a document containing not, e.g.,
+a single GeoJSON Feature Collection, but multiple GeoJSON Feature texts
+that can be parsed and produced incrementally.
 
 ## Example
 
-In a nutshell, GeoJSON Feature Sequences proposes to "explode" the
-following GeoJSON Feature Collection,
+In a nutshell, GeoJSON Text Sequences proposes to "explode" the
+following GeoJSON Feature Collection document
 
     { "type": "FeatureCollection",
       "features": [
@@ -58,6 +58,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "OPTIONAL" in this document are to be interpreted as described in
 [RFC2119].
 
-# GeoJSON Feature Sequence Format
+# GeoJSON Text Sequence Format
 
 TODO.
