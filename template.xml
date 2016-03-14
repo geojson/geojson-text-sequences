@@ -13,14 +13,14 @@
 <!ENTITY pandocRef5246  PUBLIC '' 'bib/reference.RFC.5246.xml'>
 ]>
 
-<rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-feature-seq-00">
+<rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-text-seq-00">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
 <?rfc compact="yes" ?>    <!-- conserve vertical whitespace -->
 <?rfc subcompact="no" ?>  <!-- but keep a blank line between list items -->
  <front>
-        <title abbrev="GeoJSONSeq">GeoJSON Feature Sequences</title>
+        <title abbrev="GeoJSONSeq">GeoJSON Text Sequences</title>
 
         <author initials="S." surname="Gillies"
                 fullname="S. Gillies">
@@ -42,7 +42,7 @@
         <keyword>Geospatial</keyword>
         <keyword>JavaScript Object Notation</keyword>
         <abstract>
-            <t>A proposed standard for incrementally parseable GeoJSON data</t>
+            <t>A proposed standard for geographic data that can be parsed and produced incrementally</t>
         </abstract>
 </front>
 
