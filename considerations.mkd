@@ -1,7 +1,19 @@
 # Security Considerations
 
-TODO.
+GeoJSON text sequences have no security considerations beyond those of JSON
+text sequences and the GeoJSON format.
+
+TODO: discuss on the list whether the above is strictly true.
 
 # Interoperability Considerations
 
-TODO.
+While heterogeneous sequences are permitted, homogeneous sequences are more
+interoperable.
+
+TODO: back this up.
+
+GeoJSON text sequences containing compact GeoJSON texts with no newlines
+are more interoperable with parsers designed for newline-delimited sequences
+of JSON text.
+
+TODO: provide some examples.
