@@ -11,3 +11,9 @@ While heterogeneous sequences are permitted, homogeneous sequences are more
 interoperable.
 
 TODO: back this up.
+
+GeoJSON text sequences containing compact GeoJSON texts with no newlines
+are more interoperable with parsers designed for newline-delimited sequences
+of JSON text.
+
+TODO: provide some examples.
