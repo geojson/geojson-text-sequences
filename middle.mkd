@@ -15,7 +15,9 @@ that can be parsed and produced incrementally.
 The advantage of using ASCII character RS "0x1e" to denote a record is
 that sequence producers and parsers need not enforce a canonical form
 for record GeoJSON. Any valid GeoJSON, pretty-printed or compact, can be
-used in a GeoJSON text sequence.
+used in a GeoJSON text sequence. Additionally, GeoJSON text sequences
+inherit from [RFC7464] rules for consistent processing of sequences with
+potentially corrupted records.
 
 ## Requirements Language
 
