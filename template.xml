@@ -6,7 +6,7 @@
 
 <!ENTITY pandocRef2119  PUBLIC '' 'bib/reference.RFC.2119.xml'>
 <!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
-<!ENTITY pandocRef5165  PUBLIC '' 'bib/reference.RFC.7464.xml'>
+<!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
 ]>
 
 <rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-text-seq-00">
