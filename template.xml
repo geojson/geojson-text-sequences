@@ -39,7 +39,7 @@
         <keyword>Geospatial</keyword>
         <keyword>JavaScript Object Notation</keyword>
         <abstract>
-            <t>A proposed standard for geographic data that can be parsed and produced incrementally</t>
+            <t>A proposed standard for geographic data that can be parsed and produced incrementally.</t>
         </abstract>
 </front>
 
