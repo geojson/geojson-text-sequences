@@ -12,6 +12,13 @@ Sequences. A GeoJSON Text Sequence is a document containing not, e.g.,
 a single GeoJSON Feature Collection, but multiple GeoJSON Feature texts
 that can be parsed and produced incrementally.
 
+The advantage of using ASCII character RS "0x1e" to denote a record is
+that sequence producers and parsers need not enforce a canonical form
+for record GeoJSON. Any valid GeoJSON, pretty-printed or compact, can be
+used in a GeoJSON text sequence. Additionally, GeoJSON text sequences
+inherit from [RFC7464] rules for consistent processing of sequences with
+potentially corrupted records.
+
 ## Requirements Language
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
@@ -21,11 +28,15 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 
 # GeoJSON Text Sequence Format
 
+Defined in prose, following [RFC7464]: a GeoJSON text sequence is any
+number of GeoJSON texts, each encoded in UTF-8 [RFC3629], each preceded
+by one ASCII RS character, and each followed by a line feed (LF).
+
 The GeoJSON Text Sequence Format conforms to all the rules of [RFC7464]
 and adds the following constraint: each JSON text MUST contain a single
 GeoJSON object as defined in [GeoJSON].
 
-Heterogeneous sequences containing a mix of GeoJSON Geometry, Feature, and
-Feature Collection objects are permitted. Communication between producers
-and parsers of GeoJSON text sequences about which GeoJSON types might appear
-in a sequence is not specified in this document.
+Heterogeneous sequences containing a mix of GeoJSON Geometry, Feature,
+and Feature Collection objects are permitted. How producers and parsers
+of GeoJSON text sequences should communicate about which GeoJSON types
+might appear in a sequence is not specified in this document.

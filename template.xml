@@ -5,6 +5,7 @@
 <!ENTITY pandocBack   PUBLIC '' 'back.xml'>
 
 <!ENTITY pandocRef2119  PUBLIC '' 'bib/reference.RFC.2119.xml'>
+<!ENTITY pandocRef3629  PUBLIC '' 'bib/reference.RFC.3629.xml'>
 <!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
 <!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
 ]>
@@ -26,7 +27,7 @@
                 <uri>http://sgillies.net</uri>
             </address>
         </author>
-        <date day="28" month="February" year="2016"/>
+        <date day="15" month="March" year="2016"/>
 
         <area>General</area>
         <workgroup>GeoJSON</workgroup>
@@ -80,6 +81,7 @@
 <back>
     <references title="Normative References">
         &pandocRef2119;
+        &pandocRef3629;
         &pandocRef7159;
         &pandocRef7464;
     </references>
