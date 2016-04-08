@@ -1,6 +1,6 @@
 # GeoJSON Feature Sequences
 
-A proposed standard for incrementally parseable GeoJSON data
+A proposed standard for incrementally parseable GeoJSON data.
 
 [![Circle CI](https://circleci.com/gh/geojson/geojson-text-sequences.svg?style=svg)](https://circleci.com/gh/geojson/geojson-text-sequences)
 
