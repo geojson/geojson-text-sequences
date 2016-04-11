@@ -7,17 +7,19 @@ often run to the tens of thousands or millions of records. The problem
 is amplified by the possibility of large arrays of coordinates for each
 of the records.
 
-This document describes a solution to this problem based on JSON Text
-Sequences. A GeoJSON Text Sequence is a document containing not, e.g.,
-a single GeoJSON Feature Collection, but multiple GeoJSON Feature texts
-that can be parsed and produced incrementally.
+This document describes a specialization of JSON Text Sequences that
+allows to produce and parse GeoJSON objects incrementally. A GeoJSON
+Text Sequence is a document of possibly infinite size containing one
+or more GeoJSON objects, e.g., multiple GeoJSON Feature texts that can
+be parsed and produced incrementally, and not only a single GeoJSON
+Feature Collection.
 
 The advantage of using ASCII character RS "0x1e" to denote a record is
 that sequence producers and parsers need not enforce a canonical form
 for record GeoJSON. Any valid GeoJSON, pretty-printed or compact, can be
 used in a GeoJSON text sequence. Additionally, GeoJSON text sequences
-inherit from [RFC7464] rules for consistent processing of sequences with
-potentially corrupted records.
+inherit from the other [RFC7464] rules for consistent processing of
+sequences with potentially corrupted records.
 
 ## Requirements Language
 
@@ -38,5 +40,5 @@ GeoJSON object as defined in [GeoJSON].
 
 Heterogeneous sequences containing a mix of GeoJSON Geometry, Feature,
 and Feature Collection objects are permitted. How producers and parsers
-of GeoJSON text sequences should communicate about which GeoJSON types
-might appear in a sequence is not specified in this document.
+of GeoJSON text sequences communicate rules for allowed GeoJSON types
+in exchanged sequences is not specified in this document.
