@@ -10,7 +10,7 @@
 <!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
 ]>
 
-<rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-text-seq-00">
+<rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-text-seq-01">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
