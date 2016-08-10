@@ -1,4 +1,4 @@
-# GeoJSON Feature Sequences
+# GeoJSON Text Sequences
 
 A proposed standard for incrementally parseable GeoJSON data.
 
@@ -32,12 +32,11 @@ composed of (possible) JSON texts.  JSON text sequences can be parsed
 parser (nor streaming encoder).
 
 GeoJSON Feature Sequences are a straightforward adaptation of JSON Text
-Sequences. A GeoJSON Feature Sequence is a document containing, instead of
-a single GeoJSON Feature Collection, multiple GeoJSON Feature texts that can be
-parsed and produced incrementally.
+Sequences. A GeoJSON Text Sequence is a document containing multiple GeoJSON
+texts that can be parsed and produced incrementally.
 
-In a nutshell, GeoJSON Feature Sequences proposes to "explode" the
-following GeoJSON Feature Collection,
+In a nutshell, GeoJSON Texts Sequences proposes that one may "explode" the
+following GeoJSON FeatureCollection,
 
 ```
 { "type": "FeatureCollection",
@@ -80,8 +79,8 @@ RS{ "type": "Feature", "geometry": {"type": "Polygon",
 ```
 
 Please note that this last representation is not GeoJSON anymore, because it
-uses more than one GeoJSON object. It is a "GeoJSON Feature Sequence", which
-has to be parsed accoring to the rules for JSON Text Sequences, and then can be
+uses more than one GeoJSON object. It is a GeoJSON Text Sequence which must be
+parsed accoring to the rules for JSON Text Sequences and then can be
 interpreted as a sequence of individual GeoJSON feature objects.
 
 ## Difference from "Line-delimited JSON"
