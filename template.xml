@@ -8,7 +8,7 @@
 <!ENTITY pandocRef3629  PUBLIC '' 'bib/reference.RFC.3629.xml'>
 <!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
 <!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
-<!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7946.xml'>
+<!ENTITY pandocRef7946  PUBLIC '' 'bib/reference.RFC.7946.xml'>
 ]>
 
 <rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-text-sequence-01">
