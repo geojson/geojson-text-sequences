@@ -2,16 +2,16 @@
 
 Large or never-ending sequences of records pose a problem for JSON that
 is well explained in the motivation for JSON Text Sequences [RFC7464].
-GeoJSON [GeoJSON] faces the same kind of problem: geographic datasets
-often run to the tens of thousands or millions of records. The problem
+GeoJSON [RFC7946] faces the same kind of problem: geographic datasets
+often run to the tens of thousands or millions of features. The problem
 is often amplified by the prescence of large arrays of coordinates for
-each of the records.
+each of the features.
 
 This document describes a specialization of JSON Text Sequences.
 A GeoJSON Text Sequence is a document of possibly infinite size
-containing one or more GeoJSON objects, e.g., multiple GeoJSON Feature
+containing one or more GeoJSON objects, e.g., multiple GeoJSON
 texts that can be parsed and produced incrementally, and not only
-a single GeoJSON Feature Collection.
+a single GeoJSON FeatureCollection, Feature, or Geometry.
 
 The advantage of using ASCII character RS "0x1e" to denote a record is
 that sequence producers and parsers need not enforce a canonical form
@@ -30,14 +30,15 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 # GeoJSON Text Sequence Format
 
 Defined in prose, following [RFC7464]: a GeoJSON text sequence is any
-number of GeoJSON texts, each encoded in UTF-8 [RFC3629], each preceded
-by one ASCII RS character, and each followed by a line feed (LF).
+number of GeoJSON [RFC7946] texts, each encoded in UTF-8 [RFC3629], each
+preceded by one ASCII RS character, and each followed by a line feed
+(LF).
 
 The GeoJSON Text Sequence Format conforms to all the rules of [RFC7464]
 and adds the following constraint: each JSON text MUST contain a single
-GeoJSON object as defined in [GeoJSON].
+GeoJSON object as defined in [RFC7946].
 
 Heterogeneous sequences containing a mix of GeoJSON Geometry, Feature,
-and Feature Collection objects are permitted. How producers and parsers
+and FeatureCollection objects are permitted. How producers and parsers
 of GeoJSON text sequences communicate rules for allowed GeoJSON types
 in exchanged sequences is not specified in this document.

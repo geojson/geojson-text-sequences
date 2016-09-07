@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference  anchor='RFC7946' target='http://www.rfc-editor.org/info/rfc7946'>
+<front>
+<title>The GeoJSON Format</title>
+<author initials='H.' surname='Butler' fullname='H. Butler'><organization /></author>
+<author initials='M.' surname='Daly' fullname='M. Daly'><organization /></author>
+<author initials='A.' surname='Doyle' fullname='A. Doyle'><organization /></author>
+<author initials='S.' surname='Gillies' fullname='S. Gillies'><organization /></author>
+<author initials='S.' surname='Hagen' fullname='S. Hagen'><organization /></author>
+<author initials='T.' surname='Schaub' fullname='T. Schaub'><organization /></author>
+<date year='2016' month='August' />
+<abstract><t>GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON).  It defines several types of JSON objects and the manner in which they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees.</t></abstract>
+</front>
+<seriesInfo name='RFC' value='7946'/>
+<seriesInfo name='DOI' value='10.17487/RFC7946'/>
+</reference>

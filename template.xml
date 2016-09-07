@@ -8,9 +8,10 @@
 <!ENTITY pandocRef3629  PUBLIC '' 'bib/reference.RFC.3629.xml'>
 <!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
 <!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
+<!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7946.xml'>
 ]>
 
-<rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-text-sequence-00">
+<rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-text-sequence-01">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -27,7 +28,7 @@
                 <uri>http://sgillies.net</uri>
             </address>
         </author>
-        <date day="18" month="April" year="2016"/>
+        <date day="7" month="September" year="2016"/>
 
         <area>General</area>
         <workgroup>GeoJSON</workgroup>
@@ -84,6 +85,7 @@
         &pandocRef3629;
         &pandocRef7159;
         &pandocRef7464;
+        &pandocRef7946;
     </references>
     &pandocBack;
 </back>
