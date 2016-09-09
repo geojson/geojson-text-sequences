@@ -28,7 +28,7 @@
                 <uri>http://sgillies.net</uri>
             </address>
         </author>
-        <date day="7" month="September" year="2016"/>
+        <date day="9" month="September" year="2016"/>
 
         <area>General</area>
         <workgroup>GeoJSON</workgroup>
@@ -56,10 +56,12 @@
          <t hangText="Required parameters:">n/a</t>
          <t hangText="Optional parameters:">n/a</t>
          <t hangText="Encoding considerations:">binary</t>
-         <t hangText="Security considerations:">See section 5 above</t>
-         <t hangText="Interoperability considerations:">See section 6 above</t>
+         <t hangText="Security considerations:">
+             See <xref target="security-considerations" pageno="false" format="default"/> above</t>
+         <t hangText="Interoperability considerations:">
+             See <xref target="interoperability-considerations" pageno="false" format="default"/> abovee</t>
          <t hangText="Published specification:">[[This document]]</t>
-         <t hangText="Applications that use this media type:">various</t>
+         <t hangText="Applications that use this media type:">No known applications currently use this media type. This media type is intended for GeoJSON applications currently using colloquial line-delimited variants of GeoJSON.</t>
          <t hangText="Additional information:">
             <list style="hanging">
               <t hangText="Magic number(s):">n/a</t>
