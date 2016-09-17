@@ -1,6 +1,6 @@
 # Introduction
 
-Large or never-ending sequences of records pose a problem for JSON that
+Large or never-ending sequences of values pose a problem for JSON that
 is well explained in the motivation for JSON Text Sequences [RFC7464].
 GeoJSON [RFC7946] faces the same kind of problem: geographic datasets
 often run to the tens of thousands or millions of features. The problem
@@ -13,12 +13,12 @@ containing one or more GeoJSON objects, e.g., multiple GeoJSON
 texts that can be parsed and produced incrementally, and not only
 a single GeoJSON FeatureCollection, Feature, or Geometry.
 
-The advantage of using ASCII character RS "0x1e" to denote a record is
+The advantage of using ASCII character RS "0x1e" to denote a text is
 that sequence producers and parsers need not enforce a canonical form
-for record GeoJSON. Any valid GeoJSON, pretty-printed or compact, can be
+of GeoJSON. Any valid GeoJSON, pretty-printed or compact, can be
 used in a GeoJSON text sequence. Additionally, GeoJSON text sequences
 inherit from the other [RFC7464] rules for consistent processing of
-sequences with potentially corrupted records.
+sequences with potentially corrupted texts.
 
 ## Requirements Language
 
