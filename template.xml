@@ -2,7 +2,6 @@
 <!DOCTYPE rfc SYSTEM 'rfc2629.dtd' [
 <!ENTITY pandocMiddle PUBLIC '' 'middle.xml'>
 <!ENTITY pandocConsiderations PUBLIC '' 'considerations.xml'>
-<!ENTITY pandocBack   PUBLIC '' 'back.xml'>
 
 <!ENTITY pandocRef2119  PUBLIC '' 'bib/reference.RFC.2119.xml'>
 <!ENTITY pandocRef3629  PUBLIC '' 'bib/reference.RFC.3629.xml'>
@@ -87,6 +86,5 @@
         &pandocRef7464;
         &pandocRef7946;
     </references>
-    &pandocBack;
 </back>
 </rfc>
