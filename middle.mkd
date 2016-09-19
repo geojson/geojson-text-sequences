@@ -4,7 +4,7 @@ Large or never-ending sequences of values pose a problem for JSON that
 is well explained in the motivation for JSON Text Sequences [RFC7464].
 GeoJSON [RFC7946] faces the same kind of problem: geographic datasets
 often run to the tens of thousands or millions of features. The problem
-is often amplified by the prescence of large arrays of coordinates for
+is often amplified by the presence of large arrays of coordinates for
 each of the features.
 
 This document describes a specialization of JSON Text Sequences.
