@@ -86,6 +86,6 @@ interpreted as a sequence of individual GeoJSON feature objects.
 ## Difference from "Line-delimited JSON"
 
 RFC 7464 (JSON Text Sequences) defines how parsers should behave on
-encountering malformed JSON records and allows for pretty-printed records,
+encountering malformed JSON objects and allows for pretty-printed objects,
 while approaches such as the ones described in
 https://en.wikipedia.org/wiki/JSON_Streaming#Line_delimited_JSON do not.
