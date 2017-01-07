@@ -9,7 +9,7 @@
 <!ENTITY pandocRef7946  PUBLIC '' 'bib/reference.RFC.7946.xml'>
 ]>
 
-<rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-text-sequence-02">
+<rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-text-sequence-03">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -26,7 +26,7 @@
                 <uri>http://sgillies.net</uri>
             </address>
         </author>
-        <date day="19" month="September" year="2016"/>
+        <date day="7" month="January" year="2017"/>
 
         <area>General</area>
         <workgroup>GeoJSON</workgroup>
@@ -46,7 +46,7 @@
 &pandocMiddle;
 &pandocConsiderations;
    <section title="IANA Considerations">
-       <t>The MIME media type for GeoJSON feature sequences is application/geo+json-seq.
+       <t>The MIME media type for GeoJSON feature sequences is <spanx style="verb">application/geo+json-seq</spanx>. This uses the suffix established in <xref target="I-D.wilde-json-seq-suffix"/>.
 
        <list style="hanging">
          <t hangText="Type name:">application</t>
@@ -85,6 +85,21 @@
         &pandocRef3629;
         &pandocRef7464;
         &pandocRef7946;
+    </references>
+    <references title="Informative References">
+        <reference anchor="I-D.wilde-json-seq-suffix">
+            <front>
+                <title>A Media Type Structured Syntax Suffix for JSON Text Sequences</title>
+                <author initials="E." surname="Wilde"
+                    fullname="Erik Wilde">
+                    <organization>
+                    CA Technologies
+                    </organization>
+                </author>
+                <date month="December" year="2016" />
+            </front>
+            <format type="TXT" target="https://tools.ietf.org/id/draft-wilde-json-seq-suffix-03.txt"/>
+        </reference>
     </references>
 </back>
 </rfc>
