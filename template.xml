@@ -9,7 +9,7 @@
 <!ENTITY pandocRef7946  PUBLIC '' 'bib/reference.RFC.7946.xml'>
 ]>
 
-<rfc ipr="trust200902" category="info" docName="draft-ietf-geojson-text-sequence-03">
+<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-text-sequence-04">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -26,7 +26,7 @@
                 <uri>http://sgillies.net</uri>
             </address>
         </author>
-        <date day="7" month="January" year="2017"/>
+        <date day="25" month="January" year="2017"/>
 
         <area>General</area>
         <workgroup>GeoJSON</workgroup>
@@ -38,7 +38,7 @@
         <keyword>Geospatial</keyword>
         <keyword>JavaScript Object Notation</keyword>
         <abstract>
-            <t>A proposed standard for geographic data that can be parsed and produced incrementally.</t>
+            <t>This document defines a format for geographic data that can be parsed and produced incrementally.</t>
         </abstract>
 </front>
 
@@ -57,7 +57,7 @@
          <t hangText="Security considerations:">
              See <xref target="security-considerations" pageno="false" format="default"/> above</t>
          <t hangText="Interoperability considerations:">
-             See <xref target="interoperability-considerations" pageno="false" format="default"/> abovee</t>
+             See <xref target="interoperability-considerations" pageno="false" format="default"/> above</t>
          <t hangText="Published specification:">[[This document]]</t>
          <t hangText="Applications that use this media type:">No known applications currently use this media type. This media type is intended for GeoJSON applications currently using colloquial line-delimited variants of GeoJSON.</t>
          <t hangText="Additional information:">

@@ -8,7 +8,7 @@ is often amplified by the presence of large arrays of coordinates for
 each of the features.
 
 This document describes a specialization of JSON Text Sequences.
-A GeoJSON Text Sequence is a document of possibly infinite size
+A GeoJSON Text Sequence is a document of arbitrarily large size
 containing one or more GeoJSON objects, e.g., multiple GeoJSON
 texts that can be parsed and produced incrementally, and not only
 a single GeoJSON FeatureCollection, Feature, or Geometry.
