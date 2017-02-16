@@ -40,7 +40,7 @@
         <keyword>Geospatial</keyword>
         <keyword>JavaScript Object Notation</keyword>
         <abstract>
-            <t>This document describes the GeoJSON text sequence format and "application/geo+json-seq" media type. This format is based on JavaScript Object Notation (JSON) Text Sequences and GeoJSON, and makes arbitrarily large geographic datasets incrementally parseable without restricting the form of GeoJSON texts within the sequence.</t>
+            <t>This document describes the GeoJSON text sequence format and "application/geo+json-seq" media type. This format is based on JavaScript Object Notation (JSON) Text Sequences and GeoJSON, and makes arbitrarily large geographic datasets incrementally parseable without restricting the form of GeoJSON texts within a sequence.</t>
         </abstract>
 </front>
 
