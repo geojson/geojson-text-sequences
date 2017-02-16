@@ -5,6 +5,11 @@ JSON text sequences and the GeoJSON format.
 
 # Interoperability Considerations
 
+The advantage of using ASCII character RS "0x1e" to denote a text is
+that sequence producers and parsers need not enforce a canonical form of
+GeoJSON. Any valid GeoJSON, pretty-printed or compact, can be used in
+a GeoJSON text sequence.
+
 A variety of parsers designed for newline-delimited sequences of compact
 JSON text are deployed on the internet today. While there is no
 canonical form for JSON texts, and pretty-printed and compact forms are

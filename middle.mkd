@@ -1,24 +1,18 @@
 # Introduction
 
-Large or never-ending sequences of values pose a problem for JSON that
-is well explained in the motivation for JSON Text Sequences [RFC7464].
-GeoJSON [RFC7946] faces the same kind of problem: geographic datasets
-often run to the tens of thousands or millions of features. The problem
-is often amplified by the presence of large arrays of coordinates for
-each of the features.
+Arbitrarily large sequences of values pose a problem for JavaScript
+Object Notation (JSON) [RFC7159] that is well explained in the
+motivation for JSON Text Sequences [RFC7464]. The GeoJSON format
+[RFC7946] faces the same kind of problem. Geographic datasets often run
+to the tens of thousands or millions of features. The problem is often
+amplified by the presence of large arrays of coordinates for each of the
+features.
 
 This document describes a specialization of JSON Text Sequences.
 A GeoJSON Text Sequence is a document of arbitrarily large size
-containing one or more GeoJSON objects, e.g., multiple GeoJSON
-texts that can be parsed and produced incrementally, and not only
-a single GeoJSON FeatureCollection, Feature, or Geometry.
-
-The advantage of using ASCII character RS "0x1e" to denote a text is
-that sequence producers and parsers need not enforce a canonical form
-of GeoJSON. Any valid GeoJSON, pretty-printed or compact, can be
-used in a GeoJSON text sequence. Additionally, GeoJSON text sequences
-inherit from the other [RFC7464] rules for consistent processing of
-sequences with potentially corrupted texts.
+containing one or more GeoJSON objects, e.g., multiple GeoJSON texts
+that can be produced and parsed incrementally, and not only a single
+GeoJSON FeatureCollection, Feature, or Geometry.
 
 ## Requirements Language
 
@@ -31,8 +25,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 
 Defined in prose, following [RFC7464]: a GeoJSON text sequence is any
 number of GeoJSON [RFC7946] texts, each encoded in UTF-8 [RFC3629], each
-preceded by one ASCII RS character, and each followed by a line feed
-(LF).
+preceded by one ASCII [RFC20] RS character, and each followed by a line
+feed (LF).
 
 The GeoJSON Text Sequence Format conforms to all the rules of [RFC7464]
 and adds the following constraint: each JSON text MUST contain a single

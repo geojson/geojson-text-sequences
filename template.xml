@@ -3,13 +3,15 @@
 <!ENTITY pandocMiddle PUBLIC '' 'middle.xml'>
 <!ENTITY pandocConsiderations PUBLIC '' 'considerations.xml'>
 
+<!ENTITY pandocRef20  PUBLIC '' 'bib/reference.RFC.20.xml'>
 <!ENTITY pandocRef2119  PUBLIC '' 'bib/reference.RFC.2119.xml'>
 <!ENTITY pandocRef3629  PUBLIC '' 'bib/reference.RFC.3629.xml'>
+<!ENTITY pandocRef7159  PUBLIC '' 'bib/reference.RFC.7159.xml'>
 <!ENTITY pandocRef7464  PUBLIC '' 'bib/reference.RFC.7464.xml'>
 <!ENTITY pandocRef7946  PUBLIC '' 'bib/reference.RFC.7946.xml'>
 ]>
 
-<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-text-sequence-04">
+<rfc ipr="trust200902" category="std" docName="draft-ietf-geojson-text-sequence-05">
 <?rfc toc="yes"?>         <!-- generate a table of contents -->
 <?rfc symrefs="yes"?>     <!-- use anchors instead of numbers for references -->
 <?rfc sortrefs="yes" ?>   <!-- alphabetize the references -->
@@ -26,7 +28,7 @@
                 <uri>http://sgillies.net</uri>
             </address>
         </author>
-        <date day="25" month="January" year="2017"/>
+        <date day="17" month="February" year="2017"/>
 
         <area>General</area>
         <workgroup>GeoJSON</workgroup>
@@ -38,7 +40,7 @@
         <keyword>Geospatial</keyword>
         <keyword>JavaScript Object Notation</keyword>
         <abstract>
-            <t>This document defines a format for geographic data that can be parsed and produced incrementally.</t>
+            <t>This document describes the GeoJSON text sequence format and "application/geo+json-seq" media type. This format is based on JavaScript Object Notation (JSON) Text Sequences and GeoJSON, and makes arbitrarily large geographic datasets incrementally parseable without restricting the form of GeoJSON texts within the sequence.</t>
         </abstract>
 </front>
 
@@ -55,9 +57,9 @@
          <t hangText="Optional parameters:">n/a</t>
          <t hangText="Encoding considerations:">binary</t>
          <t hangText="Security considerations:">
-             See <xref target="security-considerations" pageno="false" format="default"/> above</t>
+             See [[This document]] <xref target="security-considerations" pageno="false" format="default"/></t>
          <t hangText="Interoperability considerations:">
-             See <xref target="interoperability-considerations" pageno="false" format="default"/> above</t>
+             See [[This document]] <xref target="interoperability-considerations" pageno="false" format="default"/></t>
          <t hangText="Published specification:">[[This document]]</t>
          <t hangText="Applications that use this media type:">No known applications currently use this media type. This media type is intended for GeoJSON applications currently using colloquial line-delimited variants of GeoJSON.</t>
          <t hangText="Additional information:">
@@ -81,8 +83,10 @@
 
 <back>
     <references title="Normative References">
+        &pandocRef20;
         &pandocRef2119;
         &pandocRef3629;
+        &pandocRef7159;
         &pandocRef7464;
         &pandocRef7946;
     </references>

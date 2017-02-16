@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference  anchor='RFC0020' target='http://www.rfc-editor.org/info/rfc20'>
+<front>
+<title>ASCII format for network interchange</title>
+<author initials='V.G.' surname='Cerf' fullname='V.G. Cerf'><organization /></author>
+<date year='1969' month='October' />
+</front>
+<seriesInfo name='STD' value='80'/>
+<seriesInfo name='RFC' value='20'/>
+<seriesInfo name='DOI' value='10.17487/RFC0020'/>
+</reference>
